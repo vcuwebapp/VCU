@@ -7,3 +7,12 @@ const Color kRedColor = Color(0xFFD11149);
 const Color kPinkColor = Color(0xffF5487F);
 const Color kOrangeColor = Color(0xffF37933);
 const Color kYellowColor = Color(0xffE6C229);
+
+Map<String, dynamic> featureList = {
+  'attendance': ['Attendance', kRedColor, Icons.person],
+  'assignments': ['Assignments', kDarkPurpleColor, Icons.task],
+  'doubts': ['Doubts', kPinkColor, Icons.question_answer],
+  'marks': ['Marks', kOrangeColor, Icons.grade],
+  'portion': ['Portion', kYellowColor, Icons.book],
+  'reports': ['Reports', kPurpleColor, Icons.file_copy],
+};

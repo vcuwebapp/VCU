@@ -1,20 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:upgrader/upgrader.dart';
 import 'package:vcu_2023/globals/common_variables.dart';
-
+import 'package:vcu_2023/globals/shared_prefs_list.dart';
+import 'package:vcu_2023/user_activities/home/home.dart';
+import 'package:vcu_2023/user_activities/policy.dart';
 import 'user_activities/login/login.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await createUserSharedPrefs();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  runApp(MyApp(
+    isPolicyAcknowledged: prefs.getBool('isPolicyAcknowledged')!,
+    isLoggedIn: prefs.getBool('isLoggedIn')!,
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final bool isPolicyAcknowledged;
+  final bool isLoggedIn;
+  const MyApp(
+      {super.key,
+      required this.isPolicyAcknowledged,
+      required this.isLoggedIn});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          scaffoldBackgroundColor: Colors.grey.shade200,
           colorScheme: const ColorScheme(
               brightness: Brightness.dark,
               primary: kDarkPurpleColor,
@@ -32,7 +48,13 @@ class MyApp extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                   backgroundColor: kDarkPurpleColor,
                   foregroundColor: kWhiteColor))),
-      home: const Login(),
+      home: UpgradeAlert(
+        child: !isPolicyAcknowledged
+            ? const PolicyPage()
+            : !isLoggedIn
+                ? const Login()
+                : const Home(),
+      ),
     );
   }
 }

@@ -90,7 +90,7 @@ class LoginScreen extends State<Login> {
                               padding: const EdgeInsets.all(16.0),
                               child: ElevatedButton(
                                 onPressed: () {
-                                  checkFormValidityToProceed(
+                                  checkFormValidityToProceed(context,
                                       username, password);
                                 },
                                 child: const HeadingText(text: 'Login'),
