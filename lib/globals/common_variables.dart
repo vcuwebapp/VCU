@@ -44,6 +44,12 @@ Map navigationFeatureList = {
     Icons.schedule_outlined
   ],
   "chatroom": ['Chat Room', AppRoutes.chatroom, kRedColor, Icons.chat_rounded],
+  "userprofile": [
+    'User Profile',
+    AppRoutes.userprofile,
+    kDarkPurpleColor,
+    Icons.person_rounded
+  ],
 };
 
 const Color kWhiteColor = Color(0xffffffff);

@@ -9,6 +9,7 @@ import 'package:vcu_2023/features/marks/marks.dart';
 import 'package:vcu_2023/user_activities/notifications/notifications.dart';
 import 'package:vcu_2023/features/portion/portion.dart';
 import 'package:vcu_2023/features/reports/reports.dart';
+import 'package:vcu_2023/user_activities/user/user.dart';
 
 class AppRoutes {
   static const attendance = '/attendance';
@@ -21,6 +22,7 @@ class AppRoutes {
   static const timetable = '/timetable';
   static const chatroom = '/chatroom';
   static const notifications = '/notifications';
+  static const userprofile = '/userprofile';
 
   static Map<String, WidgetBuilder> routes = {
     attendance: (context) => const Attendance(),
@@ -33,5 +35,6 @@ class AppRoutes {
     timetable: (context) => const Timetable(),
     chatroom: (context) => const Chatroom(),
     notifications: (context) => const Notifications(),
+    userprofile: (context) => const UserProfile(),
   };
 }

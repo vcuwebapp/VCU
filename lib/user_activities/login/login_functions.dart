@@ -20,7 +20,7 @@ requestAuth(BuildContext context, String username, String password) {
     Uri url = Uri.parse('google.com');
     final response = http.post(url);
     debugPrint('response===>$response');
-    Navigator.push(
+    Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => const Home()));
   } catch (e) {
     debugPrint('requestAuth(String $username, String $password) failed: $e');

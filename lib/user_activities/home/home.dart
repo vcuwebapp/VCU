@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vcu_2023/custom_widgets/feature_icon.dart';
 import 'package:vcu_2023/globals/common_variables.dart';
+import 'package:vcu_2023/user_activities/notifications/notifications.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -19,7 +20,8 @@ class HomeScreen extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return PopScope(
+      canPop: false,
       child: Scaffold(
         appBar: AppBar(
           title: RichText(
@@ -44,7 +46,10 @@ class HomeScreen extends State<Home> {
             IconButton(
                 icon: const Icon(Icons.notifications),
                 onPressed: () {
-                  ///TODO: create notification page and navigate to notification screen.
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Notifications()));
                 }),
           ],
         ),
@@ -56,8 +61,8 @@ class HomeScreen extends State<Home> {
                 child: Image(
                     image: AssetImage('assets/images/welcome_graphics.jpg')),
               ),
-              Card(
-                color: kWhiteColor,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: GridView.builder(
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
@@ -94,7 +99,6 @@ class HomeScreen extends State<Home> {
           ),
         ),
         bottomNavigationBar: BottomAppBar(
-          color: kWhiteColor,
           elevation: 8,
           height: 60,
           child: Row(
