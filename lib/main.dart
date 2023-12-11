@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:upgrader/upgrader.dart';
+import 'package:vcu_2023/app_routes.dart';
 import 'package:vcu_2023/globals/common_variables.dart';
 import 'package:vcu_2023/globals/shared_prefs_list.dart';
 import 'package:vcu_2023/user_activities/home/home.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      routes: AppRoutes.routes,
       theme: ThemeData(
           scaffoldBackgroundColor: Colors.grey.shade200,
           colorScheme: const ColorScheme(

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Reports extends StatefulWidget {
-  const Reports({super.key});
+class Chatroom extends StatefulWidget {
+  const Chatroom({super.key});
 
   @override
-  ReportsPage createState() => ReportsPage();
+  ChatroomPage createState() => ChatroomPage();
 }
 
-class ReportsPage extends State<Reports> {
+class ChatroomPage extends State<Chatroom> {
 
   @override
   void initState() {
@@ -18,7 +18,7 @@ class ReportsPage extends State<Reports> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Reports'),
+        title: const Text('Chat Room'),
       ),
     );
   }

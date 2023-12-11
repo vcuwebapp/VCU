@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Reports extends StatefulWidget {
-  const Reports({super.key});
+class Tests extends StatefulWidget {
+  const Tests({super.key});
 
   @override
-  ReportsPage createState() => ReportsPage();
+  TestsPage createState() => TestsPage();
 }
 
-class ReportsPage extends State<Reports> {
+class TestsPage extends State<Tests> {
 
   @override
   void initState() {
@@ -18,7 +18,7 @@ class ReportsPage extends State<Reports> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Reports'),
+        title: const Text('Tests'),
       ),
     );
   }

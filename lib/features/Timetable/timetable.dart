@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Portion extends StatefulWidget {
-  const Portion({super.key});
+class Timetable extends StatefulWidget {
+  const Timetable({super.key});
 
   @override
-  PortionPage createState() => PortionPage();
+  TimetablePage createState() => TimetablePage();
 }
 
-class PortionPage extends State<Portion> {
+class TimetablePage extends State<Timetable> {
 
   @override
   void initState() {
@@ -17,7 +17,7 @@ class PortionPage extends State<Portion> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
-        title: const Text('Portion'),
+        title: const Text('Timetable'),
       ),);
   }
 }

@@ -19,61 +19,98 @@ class HomeScreen extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: RichText(
-          text: TextSpan(
-            style: const TextStyle(
-                fontWeight: FontWeight.bold, color: kDarkPurpleColor),
-            text: username,
-            children: [
-              const TextSpan(
-                text: '\n',
-              ),
-              TextSpan(
-                text: standard,
-                style: const TextStyle(
-                  fontWeight: FontWeight.normal,
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: RichText(
+            text: TextSpan(
+              style: const TextStyle(
+                  fontWeight: FontWeight.bold, color: kDarkPurpleColor),
+              text: username,
+              children: [
+                const TextSpan(
+                  text: '\n',
                 ),
-              ),
-            ],
-          ),
-        ),
-        actions: [
-          IconButton(
-              icon: const Icon(Icons.notifications),
-              onPressed: () {
-                ///TODO: create notification page and navigate to notification screen.
-              }),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const Card(
-              child: Image(
-                  image: AssetImage('assets/images/welcome_graphics.jpg')),
+                TextSpan(
+                  text: standard,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+              ],
             ),
-            Card(
-              child: GridView.builder(
+          ),
+          actions: [
+            IconButton(
+                icon: const Icon(Icons.notifications),
+                onPressed: () {
+                  ///TODO: create notification page and navigate to notification screen.
+                }),
+          ],
+        ),
+        body: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          child: Column(
+            children: [
+              const Card(
+                child: Image(
+                    image: AssetImage('assets/images/welcome_graphics.jpg')),
+              ),
+              Card(
+                color: kWhiteColor,
+                child: GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3),
-                  itemCount: featureList.length,
+                  itemCount: cardFeatureList.length,
                   itemBuilder: (context, index) {
                     return CustomFeatureIcon(
-                      featureName:
-                          featureList.entries.elementAt(index).value[0],
-                      featureIcon:
-                          featureList.entries.elementAt(index).value[2],
-                      iconColor: featureList.entries.elementAt(index).value[1],
+                      featureName: cardFeatureList.entries
+                          .elementAt(index)
+                          .value
+                          .elementAt(0),
+                      featureIcon: cardFeatureList.entries
+                          .elementAt(index)
+                          .value
+                          .elementAt(3),
+                      iconColor: cardFeatureList.entries
+                          .elementAt(index)
+                          .value
+                          .elementAt(2),
                       onTap: () {
-                        ///TODO: make chnages for dynamic fields.
+                        Navigator.pushNamed(
+                            context,
+                            cardFeatureList.entries
+                                .elementAt(index)
+                                .value
+                                .elementAt(1));
                       },
                     );
-                  }),
-            )
-          ],
+                  },
+                ),
+              )
+            ],
+          ),
+        ),
+        bottomNavigationBar: BottomAppBar(
+          color: kWhiteColor,
+          elevation: 8,
+          height: 60,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              for (var feature in navigationFeatureList.entries)
+                BottomBarFeature(
+                  featureName: feature.value.elementAt(0),
+                  featureIcon: feature.value.elementAt(3),
+                  iconColor: feature.value.elementAt(2),
+                  onTap: () {
+                    Navigator.pushNamed(context, feature.value.elementAt(1));
+                  },
+                ),
+            ],
+          ),
         ),
       ),
     );
