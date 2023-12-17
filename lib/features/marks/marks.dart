@@ -4,10 +4,10 @@ class Marks extends StatefulWidget {
   const Marks({super.key});
 
   @override
-  MarksPage createState() => MarksPage();
+  State<Marks> createState() => MarksState();
 }
 
-class MarksPage extends State<Marks> {
+class MarksState extends State<Marks> {
 
   @override
   void initState() {

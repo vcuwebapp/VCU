@@ -4,10 +4,10 @@ class Chatroom extends StatefulWidget {
   const Chatroom({super.key});
 
   @override
-  ChatroomPage createState() => ChatroomPage();
+  State<Chatroom> createState() => ChatroomState();
 }
 
-class ChatroomPage extends State<Chatroom> {
+class ChatroomState extends State<Chatroom> {
 
   @override
   void initState() {

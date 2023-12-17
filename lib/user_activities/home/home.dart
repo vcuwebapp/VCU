@@ -27,7 +27,7 @@ class HomeScreen extends State<Home> {
           title: RichText(
             text: TextSpan(
               style: const TextStyle(
-                  fontWeight: FontWeight.bold, color: kDarkPurpleColor),
+                  fontWeight: FontWeight.bold, color: kPrimaryColor),
               text: username,
               children: [
                 const TextSpan(

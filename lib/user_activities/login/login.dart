@@ -34,7 +34,7 @@ class LoginScreen extends State<Login> {
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [kPurpleColor, kDarkPurpleColor],
+              colors: [kPurpleColor, kPrimaryColor],
             ),
           ),
           child: Container(
@@ -90,10 +90,10 @@ class LoginScreen extends State<Login> {
                               padding: const EdgeInsets.all(16.0),
                               child: ElevatedButton(
                                 onPressed: () {
-                                  checkFormValidityToProceed(context,
-                                      username, password);
+                                  checkFormValidityToProceed(
+                                      context, username, password);
                                 },
-                                child: const HeadingText(text: 'Login'),
+                                child: const Text('Login'),
                               ),
                             ),
                           ),

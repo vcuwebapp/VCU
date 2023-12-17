@@ -4,10 +4,10 @@ class Portion extends StatefulWidget {
   const Portion({super.key});
 
   @override
-  PortionPage createState() => PortionPage();
+  State<Portion> createState() => PortionState();
 }
 
-class PortionPage extends State<Portion> {
+class PortionState extends State<Portion> {
 
   @override
   void initState() {

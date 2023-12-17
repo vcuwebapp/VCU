@@ -30,38 +30,37 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return FlutterSizer(
-      builder: (context, orientation, screenType){
+    return FlutterSizer(builder: (context, orientation, screenType) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
+        routes: AppRoutes.routes,
         theme: ThemeData(
-          textTheme: GoogleFonts.poppinsTextTheme(),
+            textTheme: GoogleFonts.poppinsTextTheme(),
             colorScheme: const ColorScheme(
-
                 brightness: Brightness.dark,
-                primary: kDarkPurpleColor,
+                primary: kPrimaryColor,
                 onPrimary: kWhiteColor,
                 secondary: kPinkColor,
                 onSecondary: kWhiteColor,
                 error: kRedColor,
                 onError: kWhiteColor,
                 background: kWhiteColor,
-                onBackground: kDarkPurpleColor,
+                onBackground: kPrimaryColor,
                 surface: kWhiteColor,
-                onSurface: kDarkPurpleColor),
+                onSurface: kPrimaryColor),
             useMaterial3: true,
             elevatedButtonTheme: ElevatedButtonThemeData(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: kDarkPurpleColor,
+                    backgroundColor: kPrimaryColor,
                     foregroundColor: kWhiteColor))),
         home: UpgradeAlert(
-        child: !isPolicyAcknowledged
-            ? const PolicyPage()
-            : !isLoggedIn
-                ? const Login()
-                : const Home(),
-      ),
-      );}
-    );
+          child: !isPolicyAcknowledged
+              ? const PolicyPage()
+              : !isLoggedIn
+                  ? const Login()
+                  : const Home(),
+        ),
+      );
+    });
   }
 }

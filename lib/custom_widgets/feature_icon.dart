@@ -57,7 +57,7 @@ class BottomBarFeature extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(featureIcon),
-      color: kDarkPurpleColor,
+      color: kPrimaryColor,
       onPressed: onTap,
       tooltip: featureName,
     );

@@ -4,10 +4,10 @@ class Doubts extends StatefulWidget {
   const Doubts({super.key});
 
   @override
-  DoubtsPage createState() => DoubtsPage();
+  State<Doubts> createState() => DoubtsState();
 }
 
-class DoubtsPage extends State<Doubts> {
+class DoubtsState extends State<Doubts> {
 
   @override
   void initState() {

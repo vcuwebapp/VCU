@@ -4,10 +4,10 @@ class Timetable extends StatefulWidget {
   const Timetable({super.key});
 
   @override
-  TimetablePage createState() => TimetablePage();
+  State<Timetable> createState() => TimetableState();
 }
 
-class TimetablePage extends State<Timetable> {
+class TimetableState extends State<Timetable> {
 
   @override
   void initState() {

@@ -11,7 +11,7 @@ class ShowLoading extends StatelessWidget {
       children: [
         Text(message),
         const CircularProgressIndicator.adaptive(
-          backgroundColor: kDarkPurpleColor,
+          backgroundColor: kPrimaryColor,
         ),
       ],
     );
