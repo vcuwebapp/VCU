@@ -33,6 +33,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   upgrader: ^8.4.0
   http: any
+  google_fonts: ^6.1.0
+  flutter_sizer: ^1.0.5
   shared_preferences: ^2.2.2
 
 dev_dependencies:
@@ -47,3 +49,8 @@ flutter:
   assets:
     - assets/images/welcome_graphics.jpg
     - assets/images/tslogo.png
+    - assets/images/bioico.png
+    - assets/images/chemico.png
+    - assets/images/matico.png
+    - assets/images/notiico.png
+    - assets/images/phyico.png
