@@ -7,8 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:vcu_2023/globals/common_variables.dart';
 import 'package:vcu_2023/globals/shared_prefs_list.dart';
 import 'package:vcu_2023/user_activities/home/home.dart';
-import 'package:vcu_2023/user_activities/policy.dart';import 'package:vcu_2023/user_activities/assignment/assignment.dart';
-
+import 'package:vcu_2023/user_activities/policy.dart';
 import 'user_activities/login/login.dart';
 
 void main() async {
@@ -55,7 +54,13 @@ class MyApp extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                     backgroundColor: kDarkPurpleColor,
                     foregroundColor: kWhiteColor))),
-        home: const Assignment(),
+        home: UpgradeAlert(
+        child: !isPolicyAcknowledged
+            ? const PolicyPage()
+            : !isLoggedIn
+                ? const Login()
+                : const Home(),
+      ),
       );}
     );
   }
