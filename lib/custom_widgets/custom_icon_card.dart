@@ -28,17 +28,18 @@ class CustomIconCard extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             child: Container(
               decoration: BoxDecoration(
-                  color: kPhyColor, borderRadius: BorderRadius.circular(4)),
+                image: DecorationImage(image: assetImage),
+                   borderRadius: BorderRadius.circular(4)),
               height: 8.h,
               width: 8.h,
             ),
           ),
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              HeadingText(text: "Physics Test"),
-              SubHeadingText(text: "Gravitation"),
-              DateText(text: "04 April, 7:30 p.m."),
+              HeadingText(text: headingText,),
+              SubHeadingText(text: subHeadingText,),
+              DateText(text: dateText, ),
             ],
           )
         ],

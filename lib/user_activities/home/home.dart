@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vcu_2023/custom_widgets/custom_icon_card.dart';
+import 'package:vcu_2023/custom_widgets/custom_parent_widget.dart';
+import 'package:vcu_2023/custom_widgets/custom_texts.dart';
 import 'package:vcu_2023/custom_widgets/feature_icon.dart';
 import 'package:vcu_2023/globals/common_variables.dart';
 import 'package:vcu_2023/user_activities/notifications/notifications.dart';
@@ -53,17 +56,17 @@ class HomeScreen extends State<Home> {
                 }),
           ],
         ),
-        body: SingleChildScrollView(
-          physics: const AlwaysScrollableScrollPhysics(),
-          child: Column(
-            children: [
-              const Card(
-                child: Image(
-                    image: AssetImage('assets/images/welcome_graphics.jpg')),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: GridView.builder(
+        body: CustomParentWidget(
+          child: SingleChildScrollView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Card(
+                  child: Image(
+                      image: AssetImage('assets/images/welcome_graphics.jpg')),
+                ),
+                GridView.builder(
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -94,8 +97,14 @@ class HomeScreen extends State<Home> {
                     );
                   },
                 ),
-              )
-            ],
+                const HeadingText( text: 'Tests'),
+                const CustomIconCard(assetImage: AssetImage("assets/images/phyico.png"),
+                    color: kWhiteColor,
+                    dateText: "04 April, 7:30 p.m.",
+                    headingText: "Physics Test",
+                    subHeadingText: "Gravitation"),
+              ],
+            ),
           ),
         ),
         bottomNavigationBar: BottomAppBar(
