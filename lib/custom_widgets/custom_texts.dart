@@ -4,6 +4,7 @@ import 'package:vcu_2023/globals/common_variables.dart';
 
 class HeadingText extends StatelessWidget {
   final String text;
+
   const HeadingText({super.key, required this.text});
 
   @override
@@ -23,6 +24,7 @@ class HeadingText extends StatelessWidget {
 
 class SubHeadingText extends StatelessWidget {
   final String text;
+
   const SubHeadingText({super.key, required this.text});
 
   @override
@@ -42,6 +44,7 @@ class SubHeadingText extends StatelessWidget {
 
 class DateText extends StatelessWidget {
   final String text;
+
   const DateText({super.key, required this.text});
 
   @override
@@ -58,5 +61,48 @@ class DateText extends StatelessWidget {
   }
 }
 
+class normalText extends StatelessWidget {
+  final String text;
 
+  const normalText({super.key, required this.text});
 
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      softWrap: true,
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        overflow: TextOverflow.clip,
+        color: kTextLightColor,
+        fontSize: 11.dp,
+      ),
+    );
+  }
+}
+
+class MarksText extends StatelessWidget {
+  final String text;
+
+  const MarksText({super.key, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      softWrap: true,
+      style: TextStyle(
+        overflow: TextOverflow.clip,
+        color: kWhiteColor,
+        fontSize: 20.dp,
+      ),
+    );
+  }
+}
+
+Widget detailText(String title, String value) {
+  return ListTile(
+    title: SubHeadingText(text: title),
+    subtitle: HeadingText(text: value),
+  );
+}

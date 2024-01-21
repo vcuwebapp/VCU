@@ -53,10 +53,39 @@ Map navigationFeatureList = {
   ],
 };
 
-const Color kWhiteColor = Color(0xfff2f2f2);
+Map<String, List> subjectList = {
+  "bio": [
+    'Biology',
+    kBioColor,
+    AssetImage("assets/images/bioico.png"),
+    'Sadik Sir\nShelke Sir',
+  ],
+  "chem": [
+    'Chemistry',
+    kChemColor,
+    AssetImage("assets/images/chemico.png"),
+    'Prajapati Sir\nRachana Madam',
+  ],
+  "maths": [
+    'Mathematics',
+    kMathColor,
+    AssetImage("assets/images/matico.png"),
+    'Mayur Sir\nVishwas Sir',
+  ],
+  "phy": [
+    'Physics',
+    kPhyColor,
+    AssetImage("assets/images/phyico.png"),
+    'Sadik Sir\nShelke Sir',
+  ],
+};
+
+const Color kWhiteColor = Color(0xffffffff);
+const Color kOffWhiteColor = Color(0xffe3e7ec);
 const Color kPurpleColor = Color(0xff6610F2);
 const Color kPrimaryColor = Color(0xff1F306E);
 const Color kRedColor = Color(0xFFD11149);
+const Color kGreenColor = Color(0xff2f9508);
 const Color kPinkColor = Color(0xffF5487F);
 const Color kOrangeColor = Color(0xffF37933);
 const Color kYellowColor = Color(0xffE6C229);
@@ -68,3 +97,6 @@ const Color kTextColor = Color(0xff525252);
 const Color kTextLightColor = Color(0xff8F8F8F);
 
 final fd = DateFormat('yyyy-MM-dd HH:mm:ss');
+const String statusCompleted = 'completed';
+const String statusAssigned = 'assigned';
+const String statusMissed = 'missed';

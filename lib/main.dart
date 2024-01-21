@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sizer/flutter_sizer.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:upgrader/upgrader.dart';
 import 'package:vcu_2023/app_routes.dart';
-import 'package:flutter_sizer/flutter_sizer.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vcu_2023/globals/common_variables.dart';
 import 'package:vcu_2023/globals/shared_prefs_list.dart';
 import 'package:vcu_2023/user_activities/home/home.dart';
 import 'package:vcu_2023/user_activities/policy.dart';
+
 import 'user_activities/login/login.dart';
 
 void main() async {
@@ -23,10 +24,12 @@ void main() async {
 class MyApp extends StatelessWidget {
   final bool isPolicyAcknowledged;
   final bool isLoggedIn;
+
   const MyApp(
       {super.key,
       required this.isPolicyAcknowledged,
       required this.isLoggedIn});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -35,24 +38,36 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: AppRoutes.routes,
         theme: ThemeData(
-            textTheme: GoogleFonts.poppinsTextTheme(),
-            colorScheme: const ColorScheme(
-                brightness: Brightness.dark,
-                primary: kPrimaryColor,
-                onPrimary: kWhiteColor,
-                secondary: kPinkColor,
-                onSecondary: kWhiteColor,
-                error: kRedColor,
-                onError: kWhiteColor,
-                background: kWhiteColor,
-                onBackground: kPrimaryColor,
-                surface: kWhiteColor,
-                onSurface: kPrimaryColor),
-            useMaterial3: true,
-            elevatedButtonTheme: ElevatedButtonThemeData(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: kPrimaryColor,
-                    foregroundColor: kWhiteColor))),
+          textTheme: GoogleFonts.poppinsTextTheme(),
+          colorScheme: const ColorScheme(
+              brightness: Brightness.dark,
+              primary: kPrimaryColor,
+              onPrimary: kWhiteColor,
+              secondary: kPinkColor,
+              onSecondary: kWhiteColor,
+              error: kRedColor,
+              onError: kWhiteColor,
+              background: kOffWhiteColor,
+              onBackground: kPrimaryColor,
+              surface: kWhiteColor,
+              onSurface: kPrimaryColor),
+          useMaterial3: true,
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+                backgroundColor: kPrimaryColor, foregroundColor: kWhiteColor),
+          ),
+          cardTheme: CardTheme(
+            color: kWhiteColor,
+            elevation: 1,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.dp)),
+          ),
+          listTileTheme: ListTileThemeData(
+            tileColor: kWhiteColor,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.dp)),
+          ),
+        ),
         home: UpgradeAlert(
           child: !isPolicyAcknowledged
               ? const PolicyPage()

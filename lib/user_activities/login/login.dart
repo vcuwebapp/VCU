@@ -3,6 +3,8 @@ import 'package:vcu_2023/custom_widgets/custom_texts.dart';
 import 'package:vcu_2023/globals/common_variables.dart';
 import 'package:vcu_2023/user_activities/login/login_functions.dart';
 
+import '../../custom_widgets/custom_parent_widget.dart';
+
 GlobalKey<FormState> loginFormKey = GlobalKey();
 
 class Login extends StatefulWidget {
@@ -15,7 +17,9 @@ class Login extends StatefulWidget {
 class LoginScreen extends State<Login> {
   final TextEditingController _username = TextEditingController();
   final TextEditingController _password = TextEditingController();
+
   String get username => _username.text;
+
   String get password => _password.text;
 
   @override
@@ -25,7 +29,7 @@ class LoginScreen extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return CustomParentWidget(
       child: Scaffold(
         body: Container(
           height: MediaQuery.of(context).size.height,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:vcu_2023/custom_widgets/custom_parent_widget.dart';
 import 'package:vcu_2023/globals/common_functions.dart';
 import 'package:vcu_2023/globals/common_variables.dart';
 
@@ -84,8 +85,7 @@ class AttendanceState extends State<Attendance> {
       appBar: AppBar(
         title: const Text('Attendance'),
       ),
-      body: SafeArea(
-        minimum: const EdgeInsets.all(8),
+      body: CustomParentWidget(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,37 +93,61 @@ class AttendanceState extends State<Attendance> {
               FutureBuilder(
                 future: attendanceHistoryFuture,
                 builder: (context, snapshot) {
-                  return TableCalendar(
-                    weekendDays: const [],
-                    daysOfWeekHeight: 40,
-                    firstDay: DateTime.parse('2024-01-01 00:00:00'),
-                    lastDay: todaysDateTime,
-                    focusedDay: DateTime.now(),
-                    headerStyle: const HeaderStyle(
-                      formatButtonVisible: false,
-                      titleCentered: true,
-                      headerPadding: EdgeInsets.all(16),
-                    ),
-                    startingDayOfWeek: StartingDayOfWeek.monday,
-                    daysOfWeekStyle: const DaysOfWeekStyle(
-                      decoration: BoxDecoration(
-                          border: Border(
-                              bottom: BorderSide(color: kWhiteColor, width: 2),
-                              top: BorderSide(color: kWhiteColor, width: 2))),
-                      weekendStyle: TextStyle(color: kPrimaryColor),
-                      weekdayStyle: TextStyle(color: kPrimaryColor),
-                    ),
-                    calendarBuilders: CalendarBuilders(
-                      prioritizedBuilder: (context, day, focusedDay) {
-                        for (DateTime d in toHighlight) {
-                          if (day.day == d.day &&
-                              day.month == d.month &&
-                              day.year == d.year) {
+                  return Card(
+                    child: TableCalendar(
+                      weekendDays: const [],
+                      daysOfWeekHeight: 40,
+                      firstDay: DateTime.parse('2024-01-01 00:00:00'),
+                      lastDay: todaysDateTime,
+                      focusedDay: DateTime.now(),
+                      headerStyle: const HeaderStyle(
+                        formatButtonVisible: false,
+                        titleCentered: true,
+                        headerPadding: EdgeInsets.all(16),
+                      ),
+                      startingDayOfWeek: StartingDayOfWeek.monday,
+                      daysOfWeekStyle: const DaysOfWeekStyle(
+                        decoration: BoxDecoration(
+                            border: Border(
+                                bottom:
+                                    BorderSide(color: kWhiteColor, width: 2),
+                                top: BorderSide(color: kWhiteColor, width: 2))),
+                        weekendStyle: TextStyle(color: kPrimaryColor),
+                        weekdayStyle: TextStyle(color: kPrimaryColor),
+                      ),
+                      calendarBuilders: CalendarBuilders(
+                        prioritizedBuilder: (context, day, focusedDay) {
+                          for (DateTime d in toHighlight) {
+                            if (day.day == d.day &&
+                                day.month == d.month &&
+                                day.year == d.year) {
+                              return Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.green.shade300,
+                                    borderRadius: const BorderRadius.all(
+                                      Radius.circular(5.0),
+                                    ),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      '${day.day}',
+                                      style: const TextStyle(
+                                        color: kWhiteColor,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }
+                          }
+                          if (day.isBefore(todaysDateTime)) {
                             return Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Container(
                                 decoration: BoxDecoration(
-                                  color: Colors.green.shade300,
+                                  color: Colors.red.shade300,
                                   borderRadius: const BorderRadius.all(
                                     Radius.circular(5.0),
                                   ),
@@ -131,44 +155,23 @@ class AttendanceState extends State<Attendance> {
                                 child: Center(
                                   child: Text(
                                     '${day.day}',
-                                    style: const TextStyle(
-                                      color: kWhiteColor,
-                                    ),
+                                    style: const TextStyle(color: kWhiteColor),
                                   ),
                                 ),
                               ),
                             );
                           }
-                        }
-                        if (day.isBefore(todaysDateTime)) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.red.shade300,
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(5.0),
-                                ),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  '${day.day}',
-                                  style: const TextStyle(color: kWhiteColor),
-                                ),
-                              ),
-                            ),
-                          );
-                        }
 
-                        return null;
+                          return null;
+                        },
+                      ),
+                      onDaySelected: (DateTime selectDay, DateTime focusDay) {
+                        onDayTap(selectDay, focusDay);
+                      },
+                      selectedDayPredicate: (DateTime date) {
+                        return isSameDay(userSelectedDay, date);
                       },
                     ),
-                    onDaySelected: (DateTime selectDay, DateTime focusDay) {
-                      onDayTap(selectDay, focusDay);
-                    },
-                    selectedDayPredicate: (DateTime date) {
-                      return isSameDay(userSelectedDay, date);
-                    },
                   );
                 },
               ),

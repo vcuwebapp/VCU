@@ -284,6 +284,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "percent_indicator",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/percent_indicator-4.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "petitparser",
       "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/petitparser-6.0.2",
       "packageUri": "lib/",
@@ -512,7 +518,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-01-20T15:48:35.641109Z",
+  "generated": "2024-01-21T20:33:39.845389Z",
   "generator": "pub",
   "generatorVersion": "3.2.3"
 }
