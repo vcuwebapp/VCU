@@ -61,10 +61,10 @@ class DateText extends StatelessWidget {
   }
 }
 
-class normalText extends StatelessWidget {
+class NormalText extends StatelessWidget {
   final String text;
 
-  const normalText({super.key, required this.text});
+  const NormalText({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {

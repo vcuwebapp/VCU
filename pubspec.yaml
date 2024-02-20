@@ -42,6 +42,15 @@ dependencies:
   camera: any
   fl_chart: ^0.66.0
   percent_indicator: ^4.2.3
+  sqflite: ^2.3.2
+  uuid: ^4.3.3
+  permission_handler: ^11.3.0
+  fluttertoast: ^8.2.4
+  app_settings: ^5.1.1
+  flutter_archive: ^6.0.0
+  mailer: ^6.1.0
+  device_information: ^0.0.4
+
 
 dev_dependencies:
   flutter_test:

@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "app_settings",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/app_settings-5.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "async",
       "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/async-2.11.0",
       "packageUri": "lib/",
@@ -93,13 +99,19 @@
     },
     {
       "name": "device_info_plus",
-      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/device_info_plus-9.1.1",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/device_info_plus-9.1.2",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "device_info_plus_platform_interface",
       "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/device_info_plus_platform_interface-7.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "device_information",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/device_information-0.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -128,6 +140,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "fixnum",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/fixnum-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "fl_chart",
       "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/fl_chart-0.66.0",
       "packageUri": "lib/",
@@ -138,6 +156,12 @@
       "rootUri": "file:///D:/Documents/Vaishvika/Flutter_Development/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "3.2"
+    },
+    {
+      "name": "flutter_archive",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_archive-6.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
     },
     {
       "name": "flutter_lints",
@@ -168,6 +192,12 @@
       "rootUri": "file:///D:/Documents/Vaishvika/Flutter_Development/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "3.2"
+    },
+    {
+      "name": "fluttertoast",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/fluttertoast-8.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "google_fonts",
@@ -206,6 +236,18 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "logging",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/logging-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "mailer",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/mailer-6.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "matcher",
       "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/matcher-0.12.16",
       "packageUri": "lib/",
@@ -222,6 +264,12 @@
       "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.10.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "mime",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/mime-1.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
     },
     {
       "name": "os_detect",
@@ -286,6 +334,42 @@
     {
       "name": "percent_indicator",
       "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/percent_indicator-4.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "permission_handler",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler-11.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "permission_handler_android",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_android-12.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "permission_handler_apple",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_apple-9.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "permission_handler_html",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_html-0.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "permission_handler_platform_interface",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_platform_interface-4.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "permission_handler_windows",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_windows-0.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -368,6 +452,24 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "sprintf",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/sprintf-7.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "sqflite",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite-2.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "sqflite_common",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_common-2.5.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "stack_trace",
       "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/stack_trace-1.11.1",
       "packageUri": "lib/",
@@ -390,6 +492,12 @@
       "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/string_scanner-1.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
+    },
+    {
+      "name": "synchronized",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/synchronized-3.1.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "table_calendar",
@@ -470,6 +578,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "uuid",
+      "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/uuid-4.3.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///C:/Users/Pawar/AppData/Local/Pub/Cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
@@ -518,7 +632,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-01-21T20:33:39.845389Z",
+  "generated": "2024-02-20T01:57:35.083184Z",
   "generator": "pub",
   "generatorVersion": "3.2.3"
 }

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:vcu_2023/features/Tests/tests.dart';
 import 'package:vcu_2023/features/Timetable/timetable.dart';
 import 'package:vcu_2023/features/assignments/assignments.dart';
-import 'package:vcu_2023/features/attendance/attendance.dart';
+import 'package:vcu_2023/features/attendance/attendance_calendar.dart';
 import 'package:vcu_2023/features/chatroom/chatroom.dart';
 import 'package:vcu_2023/features/doubts/doubts.dart';
 import 'package:vcu_2023/features/marks/marks.dart';
-import 'package:vcu_2023/user_activities/notifications/notifications.dart';
 import 'package:vcu_2023/features/portion/portion.dart';
 import 'package:vcu_2023/features/reports/reports.dart';
+import 'package:vcu_2023/user_activities/notifications/notifications.dart';
 import 'package:vcu_2023/user_activities/user/user.dart';
 
 class AppRoutes {

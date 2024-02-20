@@ -20,7 +20,7 @@ class TestChartCard extends StatelessWidget {
           radius: 50.dp,
           lineWidth: 5.0,
           percent: 0.8,
-          center: Text("80%"),
+          center: const Text("80%"),
           progressColor: Colors.green,
         ),
         subtitle: Column(
@@ -41,7 +41,7 @@ class BarChartCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        title: HeadingText(text: 'Subject'),
+        title: const HeadingText(text: 'Subject'),
         subtitle: BarChart(BarChartData(
             borderData: FlBorderData(
                 border: const Border(

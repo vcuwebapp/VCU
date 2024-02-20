@@ -12,15 +12,14 @@ class CustomIconCard extends StatelessWidget {
   final List? assetIcon;
   final String? status;
 
-  const CustomIconCard(
-      {super.key,
-      this.status,
-      this.assetImage,
-      this.assetIcon,
-      required this.color,
-      required this.dateText,
-      required this.headingText,
-      required this.subHeadingText});
+  const CustomIconCard({super.key,
+    this.status,
+    this.assetImage,
+    this.assetIcon,
+    required this.color,
+    required this.dateText,
+    required this.headingText,
+    required this.subHeadingText});
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +33,8 @@ class CustomIconCard extends StatelessWidget {
               border: status == null
                   ? null
                   : Border(
-                      right:
-                          BorderSide(color: getStatusColor(status!), width: 5)),
+                  right:
+                  BorderSide(color: getStatusColor(status!), width: 5)),
               color: color,
               borderRadius: BorderRadius.circular(15.dp)),
           child: Row(
@@ -95,12 +94,11 @@ class CustomChatroomCard extends StatelessWidget {
   final Color color;
   final AssetImage assetImage;
 
-  const CustomChatroomCard(
-      {super.key,
-      required this.assetImage,
-      required this.color,
-      required this.subject,
-      required this.subHeadingText});
+  const CustomChatroomCard({super.key,
+    required this.assetImage,
+    required this.color,
+    required this.subject,
+    required this.subHeadingText});
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +119,7 @@ class CustomChatroomCard extends StatelessWidget {
                 width: 8.h,
               ),
             ),
-            normalText(
+            NormalText(
               text: subHeadingText,
             ),
             Row(

@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vcu_2023/app_routes.dart';
+import 'package:vcu_2023/schema/database.dart';
+
+DatabaseHelper dbHelper = DatabaseHelper.instance;
+late SharedPreferences prefs;
 
 Map cardFeatureList = {
   "attendance": ['Attendance', AppRoutes.attendance, kRedColor, Icons.person],
@@ -57,25 +62,25 @@ Map<String, List> subjectList = {
   "bio": [
     'Biology',
     kBioColor,
-    AssetImage("assets/images/bioico.png"),
+    const AssetImage("assets/images/bioico.png"),
     'Sadik Sir\nShelke Sir',
   ],
   "chem": [
     'Chemistry',
     kChemColor,
-    AssetImage("assets/images/chemico.png"),
+    const AssetImage("assets/images/chemico.png"),
     'Prajapati Sir\nRachana Madam',
   ],
   "maths": [
     'Mathematics',
     kMathColor,
-    AssetImage("assets/images/matico.png"),
+    const AssetImage("assets/images/matico.png"),
     'Mayur Sir\nVishwas Sir',
   ],
   "phy": [
     'Physics',
     kPhyColor,
-    AssetImage("assets/images/phyico.png"),
+    const AssetImage("assets/images/phyico.png"),
     'Sadik Sir\nShelke Sir',
   ],
 };
@@ -96,7 +101,18 @@ const Color kMathColor = Color(0xffF5487F);
 const Color kTextColor = Color(0xff525252);
 const Color kTextLightColor = Color(0xff8F8F8F);
 
-final fd = DateFormat('yyyy-MM-dd HH:mm:ss');
+final fdt = DateFormat('yyyy-MM-dd HH:mm:ss');
 const String statusCompleted = 'completed';
 const String statusAssigned = 'assigned';
 const String statusMissed = 'missed';
+
+const String tableNameAssignments = 'assignments';
+const String tableNameAttendance = 'attendance';
+const String tableNameChatroom = 'chatroom';
+const String tableNameDoubts = 'doubts';
+const String tableNameMarks = 'marks';
+const String tableNamePortion = 'portion';
+const String tableNameReports = 'reports';
+const String tableNameTests = 'tests';
+const String tableNameTimetable = 'timetable';
+const String tableNameTeachers = 'teachers';
